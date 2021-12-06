@@ -9,12 +9,19 @@
     "tsc": "tsc --noEmit"
   },
   "dependencies": {
-    "@twilio-paste/core": "^10.0.0",
-    "@twilio-paste/icons": "^5.1.2",
+    "@twilio-paste/alert": "7.1.1",
+    "@twilio-paste/anchor": "5.1.2",
+    "@twilio-paste/button": "7.0.11",
+    "@twilio-paste/core": "10.13.0",
+    "@twilio-paste/icons": "5.6.0",
+    "@twilio-paste/menu": "7.0.5",
+    "@twilio-paste/modal": "7.1.4",
+    "@twilio-paste/spinner": "7.2.2",
+    "@twilio-paste/stack": "2.1.0",
     "next": "10.0.4",
-    "prop-types": "^15.7.2",
-    "react": "^16.8.6",
-    "react-dom": "^16.8.6"
+    "prop-types": "15.7.2",
+    "react": "16.14.0",
+    "react-dom": "16.14.0"
   },
   "devDependencies": {
     "@types/node": "^14.14.16",

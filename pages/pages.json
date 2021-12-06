@@ -1,0 +1,10 @@
+{
+  "home": [],
+  "studio": ["Overview", "Try it out", "Flows"],
+  "Functions": [],
+  "CLI": ["overview", "login"],
+  "phone-numbers": ["active-numbers"],
+  "Voice": ["delete", "create-standard"], 
+  "explore-products": []
+  
+}
