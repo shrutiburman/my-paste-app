@@ -1,0 +1,26 @@
+{
+    "culture": {
+        "What best describes your customers" : ["Social media savvy influences", "Sustainability warriors"],
+        "What best describes your employees" : ["Committed to the brand (and the discount)", "Committed to the cause no matter what the salary"], 
+        "What is your brand most likely to do" : ["Take a stand for social justice", "Take a stand for climate change"]
+
+    },
+    "entertainment": {
+        "What best describes your customers" : [ "Immersive experiences seekers", "Cool, on trend and always in the know"],
+        "What best describes your employees" : [ "Love to make dreams come true", "So cool and always in the 'in' crowd"],
+        "What is your brand most likely to do" : [ "Look for multiple content and value streams", "Move to clicks and bricks"]
+
+    },
+    "expertise": {
+        "What best describes your customers" : [ "Fully informed and thoroughly researched", "V.I.P. Elite", "Time is money, busy busy"],
+        "What best describes your employees" : [ "Desperate to share what they know", "Discerning, discreet and a little bit superior", "Data junkies through and through"],
+        "What is your brand most likely to do" : [ "Have a niche magazine", "Stay classy and exclusive", "Create new markets"]
+
+    },
+    "product": {
+        "What best describes your customers" : [ "Product design and innovation focused", "Traditional, knows what they like and where to get it", "Early adopters, could be trouble makers"],
+        "What best describes your employees" : ["Love to know how things work and passionate about the brand", "There to do a job.", "Impatient, always wanting to change things."],
+        "What is your brand most likely to do" : ["Change the way products work forever", "Look to buy competitors", "Grow fast"]
+
+    }
+}
