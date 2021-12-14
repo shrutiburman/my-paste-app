@@ -1,0 +1,12 @@
+{
+    "storyteller" : ["2-way SMS and Whatsapp", "Twilio Engage", "Live", "Notifications", "Twilio Content", "Social channel chat" ],
+        "activist" : ["Email", "Twilio Cotent", "SMS"],
+        "artist" : ["Twilio Engage", "Email", "Twilio Content", "SMS"],
+        "tastemaker" : [ "Twilio Engage", "Email", "Twilio Content", "2 Way SMS", "Live for all that shoppable content"],
+        "oracle" : ["Video", "Appointment Booking", "Voice", "Taskrouter - dedicated teams", "Callbacks", "2-way, multiparty chat across their channels"],
+        "concierge" : ["Video", "Voice", "Taskrouter for agent routing", "Dedicated numbers", "2-way SMS and Whatsapp", "Flex is a must"],
+        "clairvoyant" : ["Twilio Engage", "Twilio Content", "Email", "Bots on all channels", "2-way SMS/ Whatsapp"],
+        "engineer" : ["Twilio Engage", "Video", "Twilio Live", "Dedicated numbers", "Shophisticated automation (NL, Bots)", "Channel experimentation including Twitch and gaming"],
+        "gatekeeper" : ["Twilio Engage", "Email","Webchat", "In-app chat", "IVR containment (voice on life or death emergencies only)"],
+        "renegade" : ["Twilio Engage", "Notifications", "2-way SMS, Whatsapp", "Proxy calls", "Programmable voice", "Programmable messaging"] 
+}

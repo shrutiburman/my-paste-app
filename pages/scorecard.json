@@ -1,0 +1,25 @@
+{
+    "culture" : {
+        "storyteller" : ["Social media savvy influences", "Committed to the brand (and the discount)", "Take a stand for social justice" ],
+        "activist" : ["Sustainability warriors", "Committed to the cause no matter what the salary", "Take a stand for climate change"]
+
+    },
+    "entertainment": {
+        "artist" : ["Immersive experiences seekers", "Love to make dreams come true", "Look for multiple content and value streams"],
+        "tastemaker" : [ "Cool, on trend and always in the know", "So cool and always in the 'in' crowd", "Move to clicks and bricks"]
+
+    },
+    "expertise": {
+        "oracle" : ["Fully informed and thoroughly researched","Desperate to share what they know", "Have a niche magazine"],
+        "concierge" : ["V.I.P. Elite",  "Discerning, discreet and a little bit superior", "Stay classy and exclusive"],
+        "clairvoyant" : ["Time is money, busy busy", "Data junkies through and through",  "Create new markets"]
+
+    },
+    "product": {
+        "engineer" : ["Product design and innovation focused", "Love to know how things work and passionate about the brand", "Change the way products work forever"],
+        "gatekeeper" : ["Traditional, knows what they like and where to get it", "There to do a job", "Look to buy competitors"],
+        "renegade" : ["Early adopters, could be trouble makers", "Impatient, always wanting to change things", "Grow fast" ]
+
+    }
+
+}

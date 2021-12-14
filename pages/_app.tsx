@@ -9,7 +9,7 @@ export const MyApp: React.FC<AppProps> = ({Component, pageProps}) => {
     <Theme.Provider theme="flex">
       <Masthead>   
         <div>
-        Twilio Products Quiz !! &nbsp;
+        Customer Engagement Quiz ! &nbsp;
           </div>
           <div>
       </div>
@@ -19,6 +19,7 @@ export const MyApp: React.FC<AppProps> = ({Component, pageProps}) => {
       <Component {...pageProps} />
       </SiteMain>
       </SiteBody>
+
     </Theme.Provider>
   );
 };

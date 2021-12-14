@@ -7,31 +7,30 @@ import { Separator } from '@twilio-paste/core/separator'
 import { Stack } from '@twilio-paste/stack'
 import { Card } from '@twilio-paste/card'
 import { Radio, RadioGroup } from '@twilio-paste/core/radio-group'
-import { useRef } from 'react'
-import { any } from 'prop-types'
+import Router from 'next/router'
+import Image from 'next/image'
 const { submit_form } = require('../utilities/submitForm')
 const questionsJson = require('../pages/questions.json')
 const quesMap = new Map(Object.entries(questionsJson))
-console.log(quesMap)
-let selectedCat = ''
+import { Link } from 'react-router-dom'
+const bgImage = '/background.png'
+import { Button } from '@twilio-paste/core/button'
+
 
 class Quiz extends Component {
   constructor (props) {
     super(props)
     this.state = { category: '' }
   }
+
   setRadioValue (val) {
     this.setState({ category: val })
-    //console.log(val)
   }
 
-  setQuestionChoicesVal(key, value){
-      this.setState({ 
-          ...this.state, [key] : value
-      })
-      console.log('State::::');
-      console.log({ 
-        ...this.state, [key] : value
+  setQuestionChoicesVal (key, value) {
+    this.setState({
+      ...this.state,
+      [key]: value
     })
   }
 
@@ -41,27 +40,26 @@ class Quiz extends Component {
       let key = this.state.category + '_' + question
       arrOfDomChoices.push(
         <Radio
-        id = {key + i}
+          id={key + i}
+          key={key + i}
           value={choices[i]}
-          name={'brand_' + this.state.category}
+          name={'brand_' + question}
           checked={this.state[question] === choices[i]}
         >
           {choices[i]}
-          
         </Radio>
       )
     }
 
     return (
-      <Card padding='space110' id='card_brand_customer' key={question}>
+      <Card padding='space110' id={'card_' + question} key={question} style={{margin: '1em'}}>
         <RadioGroup
-          name='brand_customer'
+          name={'brand_' + question}
           legend={question}
           orientation='horizontal'
           onChange={newValue => {
-            //debugger
-              this.setQuestionChoicesVal(question, newValue)
-            }}
+            this.setQuestionChoicesVal(question, newValue)
+          }}
         >
           {arrOfDomChoices}
         </RadioGroup>
@@ -74,16 +72,53 @@ class Quiz extends Component {
       return
     }
     const questions = quesMap.get(category)
-    //debugger
     let arrOfDom = []
     for (const [key, value] of Object.entries(questions)) {
       arrOfDom.push(this.generateQuesChoices(key, value))
     }
-    console.log(questions)
-    console.log(arrOfDom)
     return arrOfDom
   }
 
+  calculate (e, state) {
+    if (!state.category) {
+      return
+    }
+    console.log('state category: ' + state.category)
+    const scorecardJson = require('../pages/scorecard.json')
+    const scoreMap = new Map(Object.entries(scorecardJson))
+    const scoreForCategory = scoreMap.get(state.category)
+    let answerSet = []
+    for (const [key, value] of Object.entries(state)) {
+      answerSet.push(value)
+    }
+    let adjectiveScore = {}
+    for (const [key, value] of Object.entries(scoreForCategory)) {
+      adjectiveScore[key] = 0
+    }
+
+    for (let i = 0; i < answerSet.length; i++) {
+      for (const [key, value] of Object.entries(scoreForCategory)) {
+        if (value.includes(answerSet[i])) {
+          adjectiveScore[key] = adjectiveScore[key] + 1
+        }
+      }
+    }
+    console.log(adjectiveScore)
+    const max = Object.keys(adjectiveScore).reduce(
+      (a, v) => Math.max(a, adjectiveScore[v]),
+      -Infinity
+    )
+    const result = Object.keys(adjectiveScore).filter(
+      v => adjectiveScore[v] === max
+    )
+    this.setQuestionChoicesVal('result', result)
+    //window.alert(result)
+    console.log({
+      ...this.state
+    })
+    e.preventDefault()
+    Router.push('/results/' + result)
+  }
   render () {
     return (
       <Box as='form' padding='space70'>
@@ -99,7 +134,6 @@ class Quiz extends Component {
         </Paragraph>
 
         <Separator orientation='horizontal' verticalSpacing='space120' />
-
         <Heading as='h2' variant='heading20'>
           Answering below questions will help us understand you better. Choose
           an option that best describes your brand!
@@ -149,10 +183,11 @@ class Quiz extends Component {
             </RadioGroup>
           </Card>
         </Stack>
-
         {this.generateQuestions(this.state.category)}
         <br />
-        <input type='submit' value='Submit' padding='space110' />
+        <Button variant='primary' onClick={e => this.calculate(e, this.state)}>
+          Submit
+        </Button>
       </Box>
     )
   }
